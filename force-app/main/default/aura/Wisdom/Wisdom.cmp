@@ -7,7 +7,6 @@
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
     <div class="slds-size_1-of-3">
 	<lightning:recordEditForm recordId='{!v.Perception}' objectApiName='Wisdom__c'>
-        <!-- a0B3t00000RQK7FEAX -->
         <lightning:messages/>
                 <div class='slds-card'>
 
@@ -30,7 +29,6 @@
     </div>
     <div class="slds-size_2-of-3">
     <lightning:recordEditForm recordId='{!v.Survival}' objectApiName='CSheet__c'>
-        <!-- a063t00000cEmi8AAC -->
         <lightning:messages/>
         <div class='slds-card'>
             <div class='slds-col slds-size_2-of-3'>

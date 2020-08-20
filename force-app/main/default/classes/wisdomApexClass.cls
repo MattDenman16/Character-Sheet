@@ -1,12 +1,12 @@
-public class wisdomApexClass {
+public without sharing class wisdomApexClass {
 
     @AuraEnabled
-    public static list<string> getString()
-    {
-        list<string> list1=new list<string>();
+    public static list<string> getString() {
+        List<String> List1=new list<String>();
         
-        list1.add([select id from Wisdom__c limit 1].id);
-        list1.add([select id from CSheet__c limit 1].id);
+        List1.add([SELECT id FROM Wisdom__c LIMIT 1].id);
+        List1.add([SELECT id FROM CSheet__c LIMIT 1].id);
+        system.debug(List1);
         return list1;
     }
 }
