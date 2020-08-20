@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+    <div class="slds-size_1-of-3">
+	<lightning:recordEditForm recordId='a0C3t00000DbsBQEAZ' objectApiName='Charisma__c'>
+        <lightning:messages/>
+                <div class='slds-card'>
+
+            <div class="slds-card__header slds-grid">
+                <p>Charisma</p>
+            </div>
+        <div class='slds-grid slds-wrap'>
+            <div class='slds-col slds-size_1-of-2'>
+                <lightning:inputfield fieldName='Saving_Throws__c'/>
+                <lightning:inputfield fieldName='Deception__c'/>
+                <lightning:inputfield fieldName='Intimidation__c'/>
+                <lightning:inputfield fieldName='Performance__c'/>
+                <lightning:inputfield fieldName='Persuasion__c'/>
+            </div>
+        </div>
+		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+        </lightning:recordEditForm>
+    </div>
+     <div class="slds-size_2-of-3">
+    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+        <lightning:messages/>
+        <div class='slds-card'>
+            <div class='slds-col slds-size_2-of-3'>
+                <lightning:inputfield fieldName='Treasures__c'/>
+            </div>
+                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+    	
+    </lightning:recordEditForm>
+    </div>
+    </div>
+</aura:component>

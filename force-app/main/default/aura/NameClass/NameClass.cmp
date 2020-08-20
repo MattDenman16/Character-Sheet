@@ -1,0 +1,50 @@
+<aura:component implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:hasRecordId">
+	<aura:attribute name="backgroundImageURL" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   
+    <div style="{!'position: relative; height: 30vh; background:' + v.backgroundColor + ' url(' + v.backgroundImageURL +') no-repeat;background-position: center;background-size: cover;'}">
+        
+    
+        	<lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+        	<lightning:messages/>
+            <div class="slds-size_1-of-1">
+        	<div class='slds-card '>
+            	<div class="slds-card__header slds-grid">
+               		<lightning:outputField fieldName='Name'/>
+           		</div>
+               <div class='slad-card slds-grid slds-wrap slds-gutters'>
+                    <div class="slds-col slds-size_1-of-2" >
+                        <lightning:inputfield fieldName='Class__c'/>
+                        <lightning:inputfield fieldName='Level__c'/>
+                        <lightning:inputfield fieldName='Background__c'/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputfield fieldName='Race__c'/>
+                        <lightning:inputfield fieldName='Subrace__c'/>
+                        <lightning:inputfield fieldName='Alignment__c'/>
+                        <lightning:inputfield fieldName='Experience_Points__c'/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">        
+                        <lightning:inputfield fieldName='Proficiency_Bonus__c'/>
+                        <lightning:inputfield fieldName='Inspiration__c'/>
+                    </div>
+                   <div class="slds-col slds-size_1-of-2">
+                       <lightning:inputfield fieldName='Hit_Points__c'/>
+                       <lightning:inputfield fieldName='Temporary_Hit_Points__c'/>
+                   </div>
+                
+                    
+       			</div>
+               
+                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+                </div>
+                </div>
+                </lightning:recordEditForm>
+
+    <c:Strength/>
+    <c:Dexterity/>
+    <c:Constitution/>
+    <c:Intelligence/>
+    <c:Wisdom/>
+    <c:Charisma/>
+    </div>
+</aura:component>

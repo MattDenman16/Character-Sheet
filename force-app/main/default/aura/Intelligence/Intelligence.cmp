@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+
+    <div class="slds-size_1-of-3">
+	<lightning:recordEditForm recordId='a0A3t00000XCIftEAH' objectApiName='Intelligence__c'>
+        <lightning:messages/>
+                <div class='slds-card'>
+
+           <div class="slds-card__header slds-grid">
+              <p>Intelligence</p>
+           </div>
+        <div class='slds-grid slds-wrap'>
+            <div class='slds-col slds-size_1-of-2'>
+                <lightning:inputfield fieldName='Saving_Throws__c'/>
+                <lightning:inputfield fieldName='Arcana__c'/>
+                <lightning:inputfield fieldName='History__c'/>
+                <lightning:inputfield fieldName='Investigation__c'/>
+                <lightning:inputfield fieldName='Nature__c'/>
+                <lightning:inputfield fieldName='Religion__c'/>
+            </div>
+        </div>
+		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+        </lightning:recordEditForm>
+    </div>
+     <div class="slds-size_2-of-3">
+    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+        <lightning:messages/>
+        <div class='slds-card'>
+            <div class='slds-col slds-size_2-of-3'>
+                <lightning:inputfield fieldName='Features_Traits_Spells__c'/>
+            </div>
+                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+    	
+    </lightning:recordEditForm>
+    </div>
+    </div>
+</aura:component>

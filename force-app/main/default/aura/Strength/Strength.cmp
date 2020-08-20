@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+	<div class="slds-size_1-of-3">
+        <lightning:recordEditForm recordId='a073t00000YvCFpAAN' objectApiName='Strength__c'>
+            <lightning:messages/>
+                <div class='slds-card ' >
+                    <div class="slds-card__header slds-grid">
+                        <p>Strength</p>
+                    </div> 
+                    <div class='slds-col slds-size_1-of-3' style ='height:195px'>
+                        <lightning:inputfield fieldName='Saving_Throws__c'/>
+                        <lightning:inputfield fieldName='Athletics__c'/>
+                    </div>
+                    <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+                </div>
+        </lightning:recordEditForm>
+    </div>
+    <div class="slds-size_2-of-3">
+    <lightning:recordEditForm recordId='a0D3t00000EHBUgEAP' objectApiName='Attack__c'>
+        <lightning:messages/>
+        <div class='slds-card'>
+        	<div class= "slds-card__header slds-grid">
+               <p>Attacks</p>
+            </div>
+            <div class='slds-col slds-size_2-of-3'>
+                <lightning:inputfield fieldName='Attack_Name__c'/>
+                <lightning:inputfield fieldName='Type__c'/>
+                <lightning:inputfield fieldName='Range__c'/>
+                <lightning:inputfield fieldName='Attack_Bonus__C'/>
+                <lightning:inputfield fieldName='Damage__c'/>
+            </div>
+            <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+    </lightning:recordEditForm>
+    </div>
+    </div>
+</aura:component>

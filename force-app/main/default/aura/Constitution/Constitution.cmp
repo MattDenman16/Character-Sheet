@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+	<div class="slds-size_1-of-3">
+	<lightning:recordEditForm recordId='a093t00000KeAeMAAV' objectApiName='Constitution__c'>
+        <lightning:messages/>
+        <div class='slds-card'>
+            <div class="slds-card__header slds-grid">
+                <p>Constitution</p>
+            </div>
+        <div class='slds-grid slds-wrap'>
+            <div class='slds-col slds-size_1-of-2'>
+                <lightning:inputfield fieldName='Saving_Throws__c'/>
+
+            </div>
+        </div>
+		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        </div>
+        </lightning:recordEditForm>
+    </div>
+        <div class="slds-size_2-of-3">
+    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+        <lightning:messages/>
+        <div class='slds-card' >
+        	<div class= "slds-card__header slds-grid">
+     
+            </div>
+            <div class='slds-col slds-box_x-large slds-size_2-of-3' style='height:85px'>
+                <lightning:inputfield fieldName='Weight_Carried__c'/><p>lbs.</p>
+     
+            </div>
+                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+
+        </div>
+    	
+    </lightning:recordEditForm>
+    </div>
+        
+    </div>
+</aura:component>
