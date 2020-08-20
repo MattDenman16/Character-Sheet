@@ -12,6 +12,17 @@
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>
+		<members>Attack__c</members>
+		<members>CSheet__c</members>
+		<members>Charisma__c</members>
+		<members>Constitution__c</members>
+		<members>Dexterity__c</members>
+		<members>Intelligence__c</members>
+		<members>Strength__c</members>
+		<members>Wisdom__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>
