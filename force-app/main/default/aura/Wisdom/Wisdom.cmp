@@ -1,7 +1,13 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller="wisdomApexClass" implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.foInit}"/>
+    <aura:attribute name="Perception" type="String"/>
+    <aura:attribute name="Survival" type="String"/>
+                                                                 
+    
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
     <div class="slds-size_1-of-3">
-	<lightning:recordEditForm recordId='a0B3t00000RQK7FEAX' objectApiName='Wisdom__c'>
+	<lightning:recordEditForm recordId='{!v.Perception}' objectApiName='Wisdom__c'>
+        <!-- a0B3t00000RQK7FEAX -->
         <lightning:messages/>
                 <div class='slds-card'>
 
@@ -18,12 +24,13 @@
                 <lightning:inputfield fieldName='Survival__c'/>
             </div>
         </div>
-		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+		<lightning:button class='slds-m-top_small' variant='brand' type='submit' onclick='{!c.myAction}' name='update' label='Update'/>
         </div>
         </lightning:recordEditForm>
     </div>
     <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+    <lightning:recordEditForm recordId='{!v.Survival}' objectApiName='CSheet__c'>
+        <!-- a063t00000cEmi8AAC -->
         <lightning:messages/>
         <div class='slds-card'>
             <div class='slds-col slds-size_2-of-3'>

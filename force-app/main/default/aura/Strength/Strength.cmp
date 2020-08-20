@@ -1,11 +1,7 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="StrengthController">
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:attribute name="strength" type="String"/>
-    <aura:attribute name="attack" type="String"/>
-    
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
 	<div class="slds-size_1-of-3">
-        <lightning:recordEditForm recordId='{!v.strength}' objectApiName='Strength__c'>
+        <lightning:recordEditForm recordId='a073t00000YvCFpAAN' objectApiName='Strength__c'>
             <lightning:messages/>
                 <div class='slds-card ' >
                     <div class="slds-card__header slds-grid">
@@ -20,7 +16,7 @@
         </lightning:recordEditForm>
     </div>
     <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='{!v.attack}' objectApiName='Attack__c'>
+    <lightning:recordEditForm recordId='a0D3t00000EHBUgEAP' objectApiName='Attack__c'>
         <lightning:messages/>
         <div class='slds-card'>
         	<div class= "slds-card__header slds-grid">

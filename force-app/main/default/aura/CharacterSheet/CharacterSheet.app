@@ -1,4 +1,4 @@
 <aura:application extends='force:slds'>
-    <c:NameClass/>
+    <c:Wisdom/>
 
 </aura:application>

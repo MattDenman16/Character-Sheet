@@ -27,6 +27,10 @@
 		<name>CustomTab</name>
 	</types>
 	<types>
+		<members>wisdomApexClass</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>
