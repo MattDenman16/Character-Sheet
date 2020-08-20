@@ -23,6 +23,10 @@
 		<name>CustomObject</name>
 	</types>
 	<types>
+		<members>CSheet__c</members>
+		<name>CustomTab</name>
+	</types>
+	<types>
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>
