@@ -6,6 +6,8 @@
 		<members>getMyID</members>
 		<members>getRecordId</members>
 		<members>wisdomApexClass</members>
+		<members>CharismaController</members>
+		<members>StrengthController</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

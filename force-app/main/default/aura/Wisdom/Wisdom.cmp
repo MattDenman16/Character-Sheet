@@ -1,5 +1,5 @@
 <aura:component controller="wisdomApexClass" implements="flexipage:availableForRecordHome,force:hasRecordId">
-    <aura:handler name="init" value="{!this}" action="{!c.foInit}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="Perception" type="String"/>
     <aura:attribute name="Survival" type="String"/>
                                                                  
