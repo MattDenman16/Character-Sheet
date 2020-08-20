@@ -28,6 +28,7 @@
 	</types>
 	<types>
 		<members>wisdomApexClass</members>
+		<members>ConstitutionController</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
