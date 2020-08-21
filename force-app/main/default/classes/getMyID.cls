@@ -4,12 +4,16 @@ public without sharing class getMyID {
     public static List<String> getMyId() {
         list<String> myIds = new List<String>();
         
-        String id1 = [SELECT id FROM Dexterity__c LIMIT 1].id;
-        String id2 = [SELECT id FROM Equipment__c LIMIT 1].id;
-        
-        myIds.add(id1);
-        myIds.add(id2);
+        myIds.add([SELECT id FROM Dexterity__c LIMIT 1].id);
+        myIds.add([SELECT id FROM Equipment__c LIMIT 1].id);
+        myIds.add([SELECT id FROM CSheet__c LIMIT 1].id);
         
         return myIds;
-    } 
+    }
+    
+    @AuraEnabled
+    public static List<Equipment__c> getEquipment() {
+        list<Equipment__c> newList = [SELECT id, Name, Damage__c, Defense__c, Weight__c FROM Equipment__c];        
+        return newList;
+    }
 }

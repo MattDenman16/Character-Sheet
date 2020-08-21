@@ -9,4 +9,11 @@ public without sharing class StrengthController {
         
         return newList;
     }
+    
+    @AuraEnabled
+    public static List<Attack__c> getAttacks() {
+        List<Attack__c> attackList = [Select id, Name, Type__c, Range__c, Damage__c FROM Attack__c];
+        
+        return attackList;
+    }
 }
