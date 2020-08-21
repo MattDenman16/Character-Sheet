@@ -2,41 +2,79 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="strength" type="String"/>
     <aura:attribute name="attack" type="String"/>
+    <aura:attribute name="attackSkills" type="Attack__c[]"/>
+    <aura:attribute name="attackBool" type="boolean" default="true"/>
+    
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
-	<div class="slds-size_1-of-3">
-        <lightning:recordEditForm recordId='{!v.strength}' objectApiName='Strength__c'>
-            <lightning:messages/>
-                <div class='slds-card ' >
-                    <div class="slds-card__header slds-grid">
-                        
-                        <div class='slds-text-title_caps' style='font-weight: bold'><p>Strength&nbsp;|&nbsp;</p></div>
+        <div class="slds-size_1-of-3">
+            <lightning:recordEditForm recordId='{!v.strength}' objectApiName='Strength__c'>
+                <lightning:messages/>
+                    <div class='slds-card ' >
+                        <div class="slds-card__header slds-grid">
+                            <div class='slds-text-title_caps' style='font-weight: bold'><p>Strength&nbsp;|&nbsp;</p></div>
                         <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
-                    </div> 
-                    <div class='slds-col slds-size_1-of-3' style ='height:195px'>
-                        <lightning:inputfield fieldName='Saving_Throws__c'/>
-                        <lightning:inputfield fieldName='Athletics__c'/>
+                        </div> 
+                        <div class='slds-col slds-size_1-of-3' style ='height:195px'>
+                            <lightning:inputfield fieldName='Saving_Throws__c'/>
+                            <lightning:inputfield fieldName='Athletics__c'/>
+                        </div>
+                        <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+                    </div>
+            </lightning:recordEditForm>
+        </div>
+        <div class="slds-size_1-of-3">
+            <lightning:recordEditForm recordId='{!v.attack}' objectApiName='Attack__c' aura:id="newEqu" onsuccess="{!c.handleOnSubmit}">
+            	<lightning:messages/>
+                <div class='slds-card'>
+                    <div class= "slds-card__header slds-grid">
+                       <p>Attacks</p>
+                    </div>
+                    <div class='slds-col slds-size_1-of-3'>
+                        <aura:if isTrue="{!!v.EquipmentSubmit}">
+                        	<lightning:inputfield fieldName='Attack_Name__c'/>
+                            <lightning:inputfield fieldName='Type__c'/>
+                            <lightning:inputfield fieldName='Range__c'/>
+                            <lightning:inputfield fieldName='Attack_Bonus__C'/>
+                            <lightning:inputfield fieldName='Damage__c'/>
+                        </aura:if>
                     </div>
                     <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
                 </div>
-        </lightning:recordEditForm>
-    </div>
-    <div class="slds-size_2-of-3">
-        <lightning:recordEditForm recordId='{!v.attack}' objectApiName='Attack__c'>
-        <lightning:messages/>
-        <div class='slds-card'>
-        	<div class= "slds-card__header slds-grid">
-               <p>Attacks</p>
-            </div>
-            <div class='slds-col slds-size_2-of-3'>
-                <lightning:inputfield fieldName='Attack_Name__c'/>
-                <lightning:inputfield fieldName='Type__c'/>
-                <lightning:inputfield fieldName='Range__c'/>
-                <lightning:inputfield fieldName='Attack_Bonus__C'/>
-                <lightning:inputfield fieldName='Damage__c'/>
-            </div>
-            <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+        	</lightning:recordEditForm>
         </div>
-    </lightning:recordEditForm>
-    </div>
+
+        <div class="slds-size_1-of-3">
+           <div class='slds-card' >
+               <div class="slds-card__header slds-grid">
+                   <p>Attack Options</p>
+               </div>
+               <div class='slds-col slds-box_medium slds-size_2-of-3'>
+                   <table border="1">
+                       <tr>
+                           <th style="text-align:center">Attack Name</th>
+                           <th style="text-align:center">Type</th>
+                           <th style="text-align:center">Range</th>
+                           <th style="text-align:center">Damage</th>
+                       </tr>
+                       <aura:iteration items="{!v.attackSkills}" var="skills">
+                           <tr>
+                               <td>
+                               		<div>{!skills.Name}</div>
+                               </td>
+                               <td>
+                               		<div>{!skills.Type__c}</div>
+                               </td>
+                               <td>
+                               		<div>{!skills.Range__c}</div>
+                               </td>
+                               <td>
+                               		<div>{!skills.Damage__c}</div>
+                               </td>
+                           </tr>
+                       </aura:iteration>
+                   </table>
+               </div>
+            </div>
+        </div>
     </div>
 </aura:component>
