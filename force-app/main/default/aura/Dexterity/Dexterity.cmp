@@ -1,7 +1,10 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller ='getMyID' implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="Dexterity" type="String"/>
+    <aura:attribute name="Equipment" type="String"/>
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
 	<div class="slds-size_1-of-3">
-	<lightning:recordEditForm recordId='a083t00000O91lqAAB' objectApiName='Dexterity__c'>
+	<lightning:recordEditForm recordId='{!v.Dexterity}' objectApiName='Dexterity__c'>
         <lightning:messages/>
         <div class='slds-card'>
         	<div class="slds-card__header slds-grid">
@@ -20,11 +23,11 @@
             </lightning:recordEditForm>
         </div>
         <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+    <lightning:recordEditForm recordId='{!v.Equipment}' objectApiName='Equipment__c'>
         <lightning:messages/>
         <div class='slds-card' >
             <div class='slds-col slds-box_x-large slds-size_2-of-3'>
-                <lightning:inputfield fieldName='Equipment__c'/>
+                <lightning:inputfield fieldName='Name'/>
      
             </div>
                 <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>

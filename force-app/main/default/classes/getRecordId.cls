@@ -1,9 +1,10 @@
 public without sharing class getRecordId {
 	
     @AuraEnabled
-    public static string CsheetId() {
-		
-        String recID = [SELECT Id FROM Csheet__c LIMIT 1].id;
-        return recID;
+    public static List<string> CsheetId() {
+		List<String> newList = new List<String>();
+        newList.add([SELECT id FROM CSheet__c Limit 1].id);
+       
+        return newList;
     }
 }

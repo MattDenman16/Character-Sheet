@@ -1,7 +1,10 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller='ConstitutionController' implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="Constitution" type="String"/>
+    <aura:attribute name="Csheet" type="String"/>
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
 	<div class="slds-size_1-of-3">
-	<lightning:recordEditForm recordId='a093t00000KeAeMAAV' objectApiName='Constitution__c'>
+	<lightning:recordEditForm recordId='{!v.Constitution}' objectApiName='Constitution__c'>
         <lightning:messages/>
         <div class='slds-card'>
             <div class="slds-card__header slds-grid">
@@ -18,7 +21,7 @@
         </lightning:recordEditForm>
     </div>
         <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+    <lightning:recordEditForm recordId='{!v.Csheet}' objectApiName='CSheet__c'>
         <lightning:messages/>
         <div class='slds-card' >
         	<div class= "slds-card__header slds-grid">
