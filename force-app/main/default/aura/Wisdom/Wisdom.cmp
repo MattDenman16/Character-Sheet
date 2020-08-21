@@ -11,7 +11,8 @@
                 <div class='slds-card'>
 
             <div class="slds-card__header slds-grid">
-                 <p>Wisdom</p>
+                 <div class='slds-text-title_caps' style='font-weight: bold'><p>Wisdom&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
             </div>
         <div class='slds-grid slds-wrap'>
             <div class='slds-col slds-size_1-of-2'>
@@ -23,7 +24,7 @@
                 <lightning:inputfield fieldName='Survival__c'/>
             </div>
         </div>
-		<lightning:button class='slds-m-top_small' variant='brand' type='submit' onclick='{!c.myAction}' name='update' label='Update'/>
+		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
         </div>
         </lightning:recordEditForm>
     </div>

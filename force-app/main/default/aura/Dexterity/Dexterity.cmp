@@ -6,12 +6,14 @@
     <aura:attribute name="EquipmentSubmitted" type="boolean" default="true"/>
 
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+
         <div class="slds-size_1-of-3">
         	<lightning:recordEditForm recordId='{!v.Dexterity}' objectApiName='Dexterity__c'>
                 <lightning:messages/>
                 <div class='slds-card'>
                     <div class="slds-card__header slds-grid">
-                        <p>Dexterity</p>
+                        <div class='slds-text-title_caps' style='font-weight: bold'><p>Dexterity&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
                     </div>
                     <div class='slds-grid slds-wrap'>
                         <div class='slds-col slds-size_1-of-2'>

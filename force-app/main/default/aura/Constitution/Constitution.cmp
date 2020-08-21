@@ -8,7 +8,8 @@
         <lightning:messages/>
         <div class='slds-card'>
             <div class="slds-card__header slds-grid">
-                <p>Constitution</p>
+                <div class='slds-text-title_caps' style='font-weight: bold'><p>Constitution&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
             </div>
         <div class='slds-grid slds-wrap'>
             <div class='slds-col slds-size_1-of-2'>
@@ -28,7 +29,7 @@
      
             </div>
             <div class='slds-col slds-box_x-large slds-size_2-of-3' style='height:85px'>
-                <lightning:inputfield fieldName='Weight_Carried__c'/><p>lbs.</p>
+                <lightning:inputfield fieldName='Carry_Weight__c'/><p>lbs.</p>
      
             </div>
                 <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>

@@ -28,6 +28,9 @@
                        <lightning:inputfield fieldName='Hit_Points__c'/>
                        <lightning:inputfield fieldName='Temporary_Hit_Points__c'/>
                    </div>
+                   <div class="slds-col slds-size_1-of-2">
+                       <lightning:inputfield fieldName='Armor__c'/>
+                   </div>
                 
                     
        			</div>
