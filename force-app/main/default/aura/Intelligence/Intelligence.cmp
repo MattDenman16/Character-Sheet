@@ -9,7 +9,8 @@
                 <div class='slds-card'>
 
            <div class="slds-card__header slds-grid">
-              <p>Intelligence</p>
+              <div class='slds-text-title_caps' style='font-weight: bold'><p>Intelligence&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
            </div>
         <div class='slds-grid slds-wrap'>
             <div class='slds-col slds-size_1-of-2'>

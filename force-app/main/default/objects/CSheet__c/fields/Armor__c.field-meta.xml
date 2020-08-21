@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Speed__c</fullName>
+    <fullName>Armor__c</fullName>
     <externalId>false</externalId>
-    <formula>Strength__r.Stat__c</formula>
+    <formula>Equipment2__r.Defense__c +( Constitution__r.Stat__c * 0.5) +  (Dexterity__r.Stat__c * 0.5)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Speed</label>
+    <label>Armor</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
