@@ -1,10 +1,7 @@
-<aura:component implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:hasRecordId">
-	<aura:attribute name="backgroundImageURL" type="String" default=""/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   
-    <div style="{!'position: relative; height: 30vh; background:' + v.backgroundColor + ' url(' + v.backgroundImageURL +') no-repeat;background-position: center;background-size: cover;'}">
-        
-    
-        	<lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+<aura:component controller ='getRecordId' implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="CSheet" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        	<lightning:recordEditForm recordId='{!v.CSheet}' objectApiName='CSheet__c'>
         	<lightning:messages/>
             <div class="slds-size_1-of-1">
         	<div class='slds-card '>
@@ -31,6 +28,9 @@
                        <lightning:inputfield fieldName='Hit_Points__c'/>
                        <lightning:inputfield fieldName='Temporary_Hit_Points__c'/>
                    </div>
+                   <div class="slds-col slds-size_1-of-2">
+                       <lightning:inputfield fieldName='Armor__c'/>
+                   </div>
                 
                     
        			</div>
@@ -46,5 +46,5 @@
     <c:Intelligence/>
     <c:Wisdom/>
     <c:Charisma/>
-    </div>
+
 </aura:component>

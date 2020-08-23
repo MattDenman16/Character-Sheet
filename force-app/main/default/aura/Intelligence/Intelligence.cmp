@@ -1,13 +1,16 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
-        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
-
+<aura:component controller='IntController' implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="Intelligence" type="String"/>
+    <aura:attribute name="CSheet" type="String"/>
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
     <div class="slds-size_1-of-3">
-	<lightning:recordEditForm recordId='a0A3t00000XCIftEAH' objectApiName='Intelligence__c'>
+	<lightning:recordEditForm recordId='{!v.Intelligence}' objectApiName='Intelligence__c'>
         <lightning:messages/>
                 <div class='slds-card'>
 
            <div class="slds-card__header slds-grid">
-              <p>Intelligence</p>
+              <div class='slds-text-title_caps' style='font-weight: bold'><p>Intelligence&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
            </div>
         <div class='slds-grid slds-wrap'>
             <div class='slds-col slds-size_1-of-2'>
@@ -24,7 +27,7 @@
         </lightning:recordEditForm>
     </div>
      <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
+    <lightning:recordEditForm recordId='{!v.CSheet}' objectApiName='CSheet__c'>
         <lightning:messages/>
         <div class='slds-card'>
             <div class='slds-col slds-size_2-of-3'>

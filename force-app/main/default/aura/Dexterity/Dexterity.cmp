@@ -1,37 +1,90 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller ='getMyID' implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="Dexterity" type="String"/>
+    <aura:attribute name="Equipment" type="String"/>
+    <aura:attribute name="EquipmentItems" type="Equipment__c[]"/>
+    <aura:attribute name="EquipmentSubmitted" type="boolean" default="true"/>
+
     <div class="demo-only demo-only--sizing slds-grid slds-wrap">
-	<div class="slds-size_1-of-3">
-	<lightning:recordEditForm recordId='a083t00000O91lqAAB' objectApiName='Dexterity__c'>
-        <lightning:messages/>
-        <div class='slds-card'>
-        	<div class="slds-card__header slds-grid">
-        		<p>Dexterity</p>
-            </div>
-        <div class='slds-grid slds-wrap'>
-            <div class='slds-col slds-size_1-of-2'>
-                <lightning:inputfield fieldName='Saving_Throws__c'/>
-                <lightning:inputfield fieldName='Acrobatics__c'/>
-                <lightning:inputfield fieldName='Sleight_of_hand__c'/>
-                <lightning:inputfield fieldName='Stealth__c'/>
-            </div>
-        </div>
-		<lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
-      </div>
+
+        <div class="slds-size_1-of-3">
+        	<lightning:recordEditForm recordId='{!v.Dexterity}' objectApiName='Dexterity__c'>
+                <lightning:messages/>
+                <div class='slds-card'>
+                    <div class="slds-card__header slds-grid">
+                        <div class='slds-text-title_caps' style='font-weight: bold'><p>Dexterity&nbsp;|&nbsp;</p></div>
+                        <lightning:outputfield fieldName='Stat__c' variant='label-hidden'/>
+                    </div>
+                    <div class='slds-grid slds-wrap'>
+                        <div class='slds-col slds-size_1-of-2'>
+                                <lightning:inputfield fieldName='Saving_Throws__c'/>
+                                <lightning:inputfield fieldName='Acrobatics__c'/>
+                                <lightning:inputfield fieldName='Sleight_of_hand__c'/>
+                                <lightning:inputfield fieldName='Stealth__c'/>
+                        </div>
+                    </div>
+                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+              </div>
             </lightning:recordEditForm>
         </div>
-        <div class="slds-size_2-of-3">
-    <lightning:recordEditForm recordId='a063t00000cEmi8AAC' objectApiName='CSheet__c'>
-        <lightning:messages/>
-        <div class='slds-card' >
-            <div class='slds-col slds-box_x-large slds-size_2-of-3'>
-                <lightning:inputfield fieldName='Equipment__c'/>
-     
+        <div class="slds-size_1-of-3">
+            <lightning:recordEditForm recordId='{!v.Equipment}' objectApiName='Equipment__c'
+                                      aura:id="newEquip"
+                                      onsuccess="{!c.handleOnSubmit}">
+            	<lightning:messages/>
+           
+                <div class='slds-card' >
+                    <div class="slds-card__header slds-grid">
+                    	<p>Equipment</p>
+                	</div>
+                    <div class='slds-col slds-box_medium slds-size_2-of-3'>
+                        <aura:if isTrue="{!!v.EquipmentSubmit}">
+                            <lightning:inputfield fieldName='Name'/>
+                            <lightning:inputfield fieldName='Damage__c'/>
+                            <lightning:inputfield fieldName='Defense__c'/>
+                            <lightning:inputfield fieldName='Weight__c'/>
+                            <lightning:inputfield fieldName='Carry_Weight__c'/>
+                        </aura:if>
+             
+                    </div>
+                    <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
+    
+            	</div>
+            
+            </lightning:recordEditForm>
+    	</div>
+        <div class="slds-size_1-of-3">
+           <div class='slds-card' >
+               <div class="slds-card__header slds-grid">
+                   <p>Equipment in Bag</p>
+               </div>
+               <div class='slds-col slds-box_medium slds-size_2-of-3'>
+                   <table border="1">
+                       <tr>
+                           <th style="text-align:center">Equipment Name</th>
+                           <th style="text-align:center">Defense</th>
+                           <th style="text-align:center">Damage</th>
+                           <th style="text-align:center">Weight</th>
+                       </tr>
+                       <aura:iteration items="{!v.EquipmentItems}" var="item">
+                           <tr>
+                               <td>
+                               		<div>{!item.Name}</div>
+                               </td>
+                               <td>
+                               		<div>{!item.Defense__c}</div>
+                               </td>
+                               <td>
+                               		<div>{!item.Damage__c}</div>
+                               </td>
+                               <td>
+                               		<div>{!item.Weight__c}</div>
+                               </td>
+                           </tr>
+                       </aura:iteration>
+                   </table>
+               </div>
             </div>
-                <lightning:button class='slds-m-top_small' variant='brand' type='submit' name='update' label='Update'/>
-
         </div>
-    	
-    </lightning:recordEditForm>
-    </div>
     </div>
 </aura:component>
